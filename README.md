@@ -24,7 +24,7 @@ To Configure the Registration App, follow these steps:
 
 Example: 
 
-{{gist}}: https://gist.github.com/zanetworker/ee4fedbeab782d797d0b 
+{{gist}}:https://gist.github.com/zanetworker/ee4fedbeab782d797d0b 
 
 ## Run 
 

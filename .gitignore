@@ -1,10 +1,6 @@
 *.pyc
-.DS_Store
 *.swp
 *.swo
 .idea/*
 *~
 .json
-_deployment
-rmpyc.sh
-count_lines.sh

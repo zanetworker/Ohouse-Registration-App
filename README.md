@@ -16,11 +16,21 @@ Furthermore, the registration app provides the user with an option to either let
 The registration app has some package dependencies, Python dependencies can then be installed using: pip install -r requirements.txt.  
 
 
-### Configuration 
+## Configuration 
 
 To Configure the Registration App, follow these steps: 
 - cp registation_app_config.json.example registation_app_config.json 
 - Open registation_app_config.json and configure it with the registration server IP and Port defined [here](https://github.com/motine/Ohouse)
+
+Example: 
+
+{
+    "description": "a file to hold configuration parameters (e.g., registration app server ip and port)",
+    "registration_server":{
+            "ip_address":"127.0.0.1",
+            "port_number":"1234"
+     }
+}
 
 ## Run 
 

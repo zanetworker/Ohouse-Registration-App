@@ -24,13 +24,7 @@ To Configure the Registration App, follow these steps:
 
 Example: 
 
-{
-    "description": "a file to hold configuration parameters (e.g., registration app server ip and port)",
-    "registration_server":{
-            "ip_address":"127.0.0.1",
-            "port_number":"1234"
-     }
-}
+{{gist}}: https://gist.github.com/zanetworker/ee4fedbeab782d797d0b 
 
 ## Run 
 

@@ -4,6 +4,7 @@ import json
 
 PATH = os.path.normpath(os.path.join(os.path.dirname(__file__),'..'))
 
+print PATH
 def generate_ssh_keys(user_first_name, user_last_name, path):
 
     """

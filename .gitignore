@@ -4,6 +4,7 @@
 *.swo
 .idea/*
 *~
+.json
 _deployment
 rmpyc.sh
 count_lines.sh

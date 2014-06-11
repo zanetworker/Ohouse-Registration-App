@@ -1,11 +1,10 @@
 import pexpect
 import os
 import json
+import time
 
-PATH = os.path.normpath(os.path.join(os.path.dirname(__file__),'..'))
 
-print PATH
-def generate_ssh_keys(user_first_name, user_last_name, path):
+def generate_ssh_keys_pexpect(user_first_name, user_last_name, path):
 
     """
     Create ssh Keys for the user
@@ -16,6 +15,7 @@ def generate_ssh_keys(user_first_name, user_last_name, path):
         ch_name: the name of the corresponding clearing house
 
     """
+    print path
     try:
         child = pexpect.spawn('ssh-keygen -t rsa')
 
@@ -74,7 +74,8 @@ def get_ssh_keys( user_first_name, user_last_name, path):
         public ssh key
 
     """
-    generate_ssh_keys(user_first_name, user_last_name, path)
+    generate_ssh_keys_pexpect(user_first_name, user_last_name, path)
+
     private_key = read_file(str(path)+ user_first_name[0] + user_last_name)
-    public_key = read_file(str(path)+ user_first_name[0] + user_last_name +'.pub')
+    public_key =  read_file(str(path)+ user_first_name[0] + user_last_name +'.pub')
     return (public_key, private_key)

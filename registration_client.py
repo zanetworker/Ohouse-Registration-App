@@ -5,7 +5,8 @@ import tkMessageBox as box
 from Tkinter import *
 from registration_client_utils import  *
 
-PATH = os.path.dirname(os.path.realpath(__file__)) + '/'
+CONFIG_PATH = os.path.dirname(os.path.realpath(__file__)) + '/configuration/'
+KEYS_PATH = os.path.dirname(os.path.realpath(__file__)) + '/keys/'
 
 class RegistrationFrame(Frame):
 
@@ -14,7 +15,7 @@ class RegistrationFrame(Frame):
 
 
     # Registration Server Configuration Parameters
-        self._registration_data = read_json_file(PATH + 'registration_app_config.json')
+        self._registration_data = read_json_file(CONFIG_PATH + 'registration_app_config.json')
         self.server_ip = self._registration_data['registration_server']['ip_address']
         self.server_port = self._registration_data['registration_server']['port_number']
 
@@ -136,7 +137,7 @@ class RegistrationFrame(Frame):
                 if first_name and last_name and user_name and email:
                     public_key_value, private_key_value = get_ssh_keys(self.first_name_entry.get(),
                                                     self.last_name_entry.get(),
-                                                    PATH)
+                                                    KEYS_PATH)
 
                     self.public_key_text_area.insert(END, public_key_value)
                     self.private_key_text_area.insert(END, private_key_value)

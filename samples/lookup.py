@@ -18,8 +18,6 @@ class lookup_example:
         A sample lookup function which uses dumb ssl certificates and credentials
         Args:
             match: objects to match on e.g., member / user urn
-            k
-
         Return:
             return the result of the event generated
         """

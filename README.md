@@ -24,6 +24,19 @@ To Configure the Registration App, follow these steps:
 
 An example can be found [here](https://gist.github.com/zanetworker/ee4fedbeab782d797d0b) 
 
+
 ## Run 
 
 To run the registration app, run "python  registration_client.py" 
+
+
+## Samples 
+
+The repository contains a sample code to test looking up values such as SSH keys. To use the sample code, 
+- First create a new user with the username 'alice' using the registration app as described in the "Run" section.  
+- run "python lookup.py" 
+
+If you want to change the test username, then modify the lookup_data in lookup.py with another user name. For example, 
+instead of 'urn:publicid:IDN+test:fp7-ofelia:eu+user+alice' use 'urn:publicid:IDN+test:fp7-ofelia:eu+user+<new_user_name>'
+
+

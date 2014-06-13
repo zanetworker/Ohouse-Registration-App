@@ -14,8 +14,8 @@ Furthermore, the registration app provides the user with an option to either let
 ## Dependencies
 
 The registration app has some package dependencies, Python dependencies can then be installed using: pip install -r requirements.txt.  
-
-
+Furthermore, the method that is currently used to generate SSH keys is ssh-keygen, so it should also be installed beforehand. 
+ 
 ## Configuration 
 
 To Configure the Registration App, follow these steps: 

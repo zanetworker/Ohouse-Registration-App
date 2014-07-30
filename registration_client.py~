@@ -90,21 +90,16 @@ class RegistrationFrame(Frame):
         self.private_key_text_area = Text(self, height=2, width=100)
         self.private_key_text_area.grid( row = 7, columnspan = 1, column = 1, sticky = W+E)
 
-        self.user_credentials = Label(self, text="User Credentials:")
-        self.user_credentials.grid(row=8, column=0,  sticky = W)
-        self.user_credentials = Text(self, height=2, width=100)
-        self.user_credentials.grid( row = 8, columnspan = 1, column = 1, sticky = W+E)
-
     #Buttons
         self.button_register= Button(self, text="Register",
                                      command=self.call_back('register'))
-        self.button_register.grid(row=9, column = 0)
+        self.button_register.grid(row=8, column = 0)
 
         self.button_quit = Button(self, text="Quit", command=quit)
-        self.button_quit.grid(row=9, column = 1)
+        self.button_quit.grid(row=8, column = 1)
 
         self.button_clear = Button(self, text="Clear", command=self.call_back('clear'))
-        self.button_clear.grid(row=9, column = 2)
+        self.button_clear.grid(row=8, column = 2)
 
 
     def call_back (self, function, **kwargs):
@@ -129,16 +124,13 @@ class RegistrationFrame(Frame):
                 public_key_value = self.public_key_text_area.get('0.0', END)
                 if first_name and last_name and user_name and email and public_key_value :
 
-                    member, key, credentials =  server.register_user(self.first_name_entry.get(),
+                    result =  server.register_user(self.first_name_entry.get(),
                                                    self.last_name_entry.get(),
                                                    self.user_name_entry.get(),
                                                    self.email_entry.get(),
                                                    self.public_key_text_area.get('0.0', END))
 
-
-                    credentials_value = credentials['CREDENTIAL_VALUE'] if credentials else "EMPTY_CREDENTIALS"
-                    self.user_credentials.insert(END, credentials_value)
-                    self.raise_tkinter_message('registered')() if credentials else self.raise_tkinter_message('fail')()
+                    self.raise_tkinter_message('registered')() if result else self.raise_tkinter_message('fail')()
                 else:
                     self.raise_tkinter_message('missing')()
             else:
@@ -149,16 +141,13 @@ class RegistrationFrame(Frame):
 
                     self.public_key_text_area.insert(END, public_key_value)
                     self.private_key_text_area.insert(END, private_key_value)
-                    member, key, credentials= server.register_user(self.first_name_entry.get(),
+                    result = server.register_user(self.first_name_entry.get(),
                                                    self.last_name_entry.get(),
                                                    self.user_name_entry.get(),
                                                    self.email_entry.get(),
                                                    public_key_value)
 
-
-                    credentials_value = credentials['CREDENTIAL_VALUE'] if credentials else "EMPTY_CREDENTIALS"
-                    self.user_credentials.insert(END, credentials_value)
-                    self.raise_tkinter_message('registered')() if credentials else self.raise_tkinter_message('fail')()
+                    self.raise_tkinter_message('registered')() if result else self.raise_tkinter_message('fail')()
                 else:
                     self.raise_tkinter_message('missing')()
 

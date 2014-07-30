@@ -2,6 +2,5 @@
 *.swp
 *.swo
 .idea/*
-*.pub
-keys/*
+*~
 *.json
